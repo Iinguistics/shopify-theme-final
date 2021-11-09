@@ -42,31 +42,27 @@ footer .address {
           <div class="footer-fade-in">
             <div class="social-title">Follow Us</div>
             <ul class="social-icons">
+            {% if settings.social_facebook_link != blank %}
               <li>
-                <a href="#">
+                <a href={{ settings.social_facebook_link }}>
                   <i class="fa fa-facebook" aria-hidden="true"></i>
                 </a>
               </li>
+              {% endif %}
+            {% if settings.social_twitter_link != blank %}
               <li>
-                <a href="#">
-                  <i class="fa fa-google" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
+                <a href={{ settings.social_facebook_link }}>
                   <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
               </li>
+              {% endif %}
+              {% if settings.social_pinterest_link != blank %}
               <li>
-                <a href="#">
-                  <i class="fa fa-youtube" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
+                <a href={{ settings.social_pinterest_link }}>
                   <i class="fa fa-pinterest" aria-hidden="true"></i>
                 </a>
               </li>
+              {% endif %}
             </ul>
           </div>
         </div>
