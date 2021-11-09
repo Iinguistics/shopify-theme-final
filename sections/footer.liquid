@@ -22,22 +22,16 @@ footer .address {
         <div class="col-md-6">
           <div class="row">
           {% for block in section.blocks %}
+            {%- assign footer_linklist = block.settings.menu -%}
             <div class="col-md-4">
               <div class="footer-menu footer-fade-in">
                 <span class="menu-title">{{ block.settings.title }}</span>
                 <ul>
+                {%- for link in linklists[footer_linklist].links -%}
                   <li>
-                    <a href="#">About</a>
+                    <a href="{{ link.url }}">{{ link.title | escape }}</a>
                   </li>
-                  <li>
-                    <a href="#">Contact</a>
-                  </li>
-                  <li>
-                    <a href="#">Career</a>
-                  </li>
-                  <li>
-                    <a href="#">Policy</a>
-                  </li>
+                  {% endfor %}
                 </ul>
               </div>
             </div>
