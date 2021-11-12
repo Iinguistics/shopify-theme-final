@@ -70,7 +70,7 @@ footer .address {
       <div class="row">
         <div class="col-sm-12 footer-fade-in">
           <hr>
-          <span class="address">Storename 23 Grand Ave, Los Angeles, California 11234</span>
+          <span class="address">{{ section.settings.footer_bottom_text }}</span>
         </div>
       </div>
     </div>
@@ -190,12 +190,17 @@ footer .address {
       "label": "Footer Menu Background",
       "default": "#1b1b1b"
     },
-
     {
       "type": "color",
       "id": "color_footer_text",
       "label": "Footer Menu Text",
       "default": "#333232"
+    },
+        {
+      "type": "textarea",
+      "id": "footer_bottom_text",
+      "label": "Text for bottom of footer",
+      "default": "1234 Fake St, San Deigo, Ca, 95124"
     },
     {
       "type": "header",
