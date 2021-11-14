@@ -26,48 +26,26 @@
   "class": "index-section index-section--flush",
   "settings": [
     {
-      "type": "text",
-      "id": "section_title",
-      "label": {
-        "da": "Overskrift",
-        "de": "Titel",
-        "en": "Heading",
-        "es": "Título",
-        "fi": "Otsake",
-        "fr": "En-tête",
-        "hi": "शीर्षक",
-        "it": "Heading",
-        "ja": "見出し",
-        "ko": "제목",
-        "nb": "Overskrift",
-        "nl": "Kop",
-        "pt-BR": "Título",
-        "pt-PT": "Título",
-        "sv": "Rubrik",
-        "th": "ส่วนหัว",
-        "zh-CN": "标题",
-        "zh-TW": "標題"
+        "type": "radio",
+        "id": "bg_type",
+        "label": "Do you want a video bg or image",
+        "options": [
+          {
+            "value": "image",
+            "label": "Image"
+          },
+          {
+            "value": "video",
+            "label": "Video"
+          }
+        ],
+        "default": "image",
+        "info": "Text"
       },
-      "default": {
-        "da": "Tilmeld dig vores nyhedsbrev",
-        "de": "Unseren Newsletter abonnieren",
-        "en": "Subscribe to our newsletter",
-        "es": "Suscríbete a nuestro boletín de noticias",
-        "fi": "Tilaa uutiskirjeemme",
-        "fr": "S'inscrire à la newsletter",
-        "hi": "हमारे न्यूज़लेटर की सदस्यता लें",
-        "it": "Iscriviti alla nostra newsletter",
-        "ja": "ストアからのお知らせを受け取る",
-        "ko": "뉴스 레터 구독",
-        "nb": "Abonner på nyhetsbrevet vårt",
-        "nl": "Abonneren op onze nieuwsbrief",
-        "pt-BR": "Assine a nossa newsletter",
-        "pt-PT": "Subscreva a nossa newsletter",
-        "sv": "Prenumerera på vårt nyhetsbrev",
-        "th": "สมัครรับจดหมายข่าวของเรา",
-        "zh-CN": "订阅我们的新闻通讯",
-        "zh-TW": "訂閱我們的電子報"
-      }
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video Url"
     },
     {
       "type": "richtext",
