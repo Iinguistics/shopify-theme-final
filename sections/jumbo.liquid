@@ -1,8 +1,15 @@
   <section id="jumbo">
+    {% if section.settings.bg_type ==  'video' %}
+    {% if section.settings.video_type == 'vimeo' %}
     <iframe allowfullscreen="" class="bg-video" frameborder="0" mozallowfullscreen=""
       style="background: black;" webkitallowfullscreen=""
-      src="//player.vimeo.com/video/353546049?title=0&amp;portrait=0&amp;byline=0&amp;autoplay=1&loop=1"></iframe>
-    <!-- <div class="bg-image"></div> -->
+      src="//player.vimeo.com/video/{{section.settings.video_id}}?title=0&amp;portrait=0&amp;byline=0&amp;autoplay=1&loop=1&mute=1"></iframe> 
+      {% else %}
+    <iframe class="bg-video" src="https://www.youtube.com/embed/{{section.settings.video_id}}?autoplay=1&loop=1&mute=1" style="background: black;" webkitallowfullscreen="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      {% endif %}
+      {% else %}
+    <div class="bg-image" style="background: url('{{ section.settings.bg_image | img_url: '1200x'}}'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div> 
+    {% endif %}
     <div class="transparent-color"></div>
     <div class="titles">
       <h1>Off White</h1>
@@ -28,7 +35,7 @@
     {
         "type": "radio",
         "id": "bg_type",
-        "label": "Do you want a video bg or image",
+        "label": "Background Type",
         "options": [
           {
             "value": "image",
@@ -40,13 +47,54 @@
           }
         ],
         "default": "image",
-        "info": "Text"
+        "info": "Do you want a video bg or image"
       },
-    {
-      "type": "text",
-      "id": "video_url",
-      "label": "Video Url"
-    },
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": {
+          "da": "Billede",
+          "de": "Foto",
+          "en": "Image",
+          "es": "Imagen",
+          "fi": "Kuva",
+          "fr": "Image",
+          "hi": "इमेज",
+          "it": "Immagine",
+          "ja": "画像",
+          "ko": "이미지",
+          "nb": "Bilde",
+          "nl": "Afbeelding",
+          "pt-BR": "Imagem",
+          "pt-PT": "Imagem",
+          "sv": "Bild",
+          "th": "รูปภาพ",
+          "zh-CN": "图片",
+          "zh-TW": "圖片"
+        }
+      },
+      {
+        "type": "radio",
+        "id": "video_type",
+        "label": "Video type",
+        "options": [
+          {
+            "value": "youtube",
+            "label": "Youtube"
+          },
+          {
+            "value": "vimeo",
+            "label": "Vimeo"
+          }
+        ],
+        "default": "vimeo",
+        "info": "Do you want a video bg or image"
+      },
+            {
+        "type": "text",
+        "id": "video_id",
+        "label": "Video id"
+      },  
     {
       "type": "richtext",
       "id": "subheading",
