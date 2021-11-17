@@ -1,3 +1,6 @@
+{%- assign collection_1 = collections[section.settings.collection_1] -%}
+{%- assign collection_2 = collections[section.settings.collection_2] -%}
+
   <section id="twoCollections">
     <div class="row">
       <div class="col-md-6 left-c">
@@ -7,8 +10,7 @@
         </div>
         <span class="collection-title">
           <span>
-            Summer<br>
-            Collection
+            {{ collection_1.title }}
           </span>
         </span>
       </div>
@@ -18,7 +20,7 @@
             <img src="assets/guymodel.jpg" class="">
             <span class="collection-title">
               <span>
-                Trending
+                {{ collection_2.title }}
               </span>
             </span>
           </div>
@@ -31,84 +33,20 @@
 
 {% schema %}
 {
-  "name": "two_collections",
+  "name": "Two Collections",
   "class": "index-section index-section--flush",
   "settings": [
     {
-        "type": "radio",
-        "id": "bg_type",
-        "label": "Background Type",
-        "options": [
-          {
-            "value": "image",
-            "label": "Image"
-          },
-          {
-            "value": "video",
-            "label": "Video"
-          }
-        ],
-        "default": "video",
-        "info": "Do you want a video bg or image"
-      },
-      {
-        "type": "image_picker",
-        "id": "bg_image",
-        "label": {
-          "da": "Billede",
-          "de": "Foto",
-          "en": "Image",
-          "es": "Imagen",
-          "fi": "Kuva",
-          "fr": "Image",
-          "hi": "इमेज",
-          "it": "Immagine",
-          "ja": "画像",
-          "ko": "이미지",
-          "nb": "Bilde",
-          "nl": "Afbeelding",
-          "pt-BR": "Imagem",
-          "pt-PT": "Imagem",
-          "sv": "Bild",
-          "th": "รูปภาพ",
-          "zh-CN": "图片",
-          "zh-TW": "圖片"
-        }
-      },
-      {
-        "type": "radio",
-        "id": "video_type",
-        "label": "Video type",
-        "options": [
-          {
-            "value": "youtube",
-            "label": "Youtube"
-          },
-          {
-            "value": "vimeo",
-            "label": "Vimeo"
-          }
-        ],
-        "default": "vimeo",
-        "info": "Choose location where you uploaded video"
-      },
-            {
-        "type": "text",
-        "id": "video_id",
-        "label": "Video id",
-        "default": "353546049"
-      }, 
-      {
-          "type": "text",
-          "id": "jumbo_h1",
-          "label": "Jumbo Title",
-          "default": "OFF WHITE"
-      }, 
-      {
-        "type": "text",
-        "id": "jumbo_h2",
-        "label": "Jumbo Sub-Title",
-        "default": "New Collection"
+        "type": "collection",
+        "id": "collection_1",
+        "label": "Collection 1",
+        "info": "Choose a collection"
+    },
+    {
+        "type": "collection",
+        "id": "collection_2",
+        "label": "Collection 2",
+        "info": "Choose a collection"
     }
   ],
   "presets": [
