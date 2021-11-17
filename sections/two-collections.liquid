@@ -3,9 +3,9 @@
 
   <section id="twoCollections">
     <div class="row">
-      <a href="{{ collection_1.url }}" class="col-md-6 left-c">
+      <a href="{{ collection_1.url }}" class="col-md-6 left-c" style="color: {{ section.settings.collection_1_text_color }}">
         <div class="left-c-img">
-          <div class="overlay"></div>
+          <div class="overlay" style="background: {{ section.settings.collection_1_bg_color }};"></div>
           <img src="{{collection_1.image | img_url: '500x'}}" class="">
         </div>
         <span class="collection-title">
@@ -14,12 +14,12 @@
           </span>
         </span>
       </a>
-      <a href="{{ collection_2.url }}" class="col-md-6 right-c">
-        <div class="right-c-bg">
+      <a href="{{ collection_2.url }}" class="col-md-6 right-c" style="color: {{ section.settings.collection_2_text_color }}">
+        <div class="right-c-bg" style="background: {{ section.settings.collection_2_bg_color }};">
           <div class="right-c-img">
             <img src="{{collection_2.image | img_url: '500x'}}" class="">
             <span class="collection-title">
-              <span>
+              <span style="color: {{ section.settings.collection_2_text_color }}">
                 {{ collection_2.title }}
               </span>
             </span>
@@ -43,10 +43,34 @@
         "info": "Choose a collection"
     },
     {
+        "type": "color",
+        "id": "collection_1_bg_color",
+        "label": "BG Color",
+        "default": "#ffff00"
+    },
+        {
+        "type": "color",
+        "id": "collection_1_text_color",
+        "label": "Text Color",
+        "default": "#FFFFFF"
+    },
+    {
         "type": "collection",
         "id": "collection_2",
         "label": "Collection 2",
         "info": "Choose a collection"
+    },
+    {
+        "type": "color",
+        "id": "collection_2_bg_color",
+        "label": "BG Color",
+        "default": "#dddfe4"
+    },
+        {
+        "type": "color",
+        "id": "collection_2_text_color",
+        "label": "Text Color",
+        "default": "#FFFFFF"
     }
   ],
   "presets": [
