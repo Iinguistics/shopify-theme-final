@@ -3,21 +3,21 @@
 
   <section id="twoCollections">
     <div class="row">
-      <div class="col-md-6 left-c">
+      <a href="{{ collection_1.url }}" class="col-md-6 left-c">
         <div class="left-c-img">
           <div class="overlay"></div>
-          <img src="assets/summer-girl.jpg" class="">
+          <img src="{{collection_1.image | img_url: '500x'}}" class="">
         </div>
         <span class="collection-title">
           <span>
             {{ collection_1.title }}
           </span>
         </span>
-      </div>
-      <div class="col-md-6 right-c">
+      </a>
+      <a href="{{ collection_2.url }}" class="col-md-6 right-c">
         <div class="right-c-bg">
           <div class="right-c-img">
-            <img src="assets/guymodel.jpg" class="">
+            <img src="{{collection_2.image | img_url: '500x'}}" class="">
             <span class="collection-title">
               <span>
                 {{ collection_2.title }}
@@ -25,7 +25,7 @@
             </span>
           </div>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 
