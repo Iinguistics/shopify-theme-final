@@ -13,6 +13,18 @@ body {
 	overflow-y: scroll;
 }
 
+h1,
+h2.h3,
+h4,
+h5,
+h6,
+p,
+span {
+	font-family: 'Avenir Next Condensed', 'Source Sans Pro', Arial, Helvetica;
+	margin: 0;
+	line-height: 1;
+}
+
 header {
 	position: fixed;
 	display: flex;
@@ -180,16 +192,13 @@ header .menu .dropdown .sub-menu a {
 
 #jumbo .store-info img {
 	height: 100%;
-	width: 25%;
+	width: 100%;
 	object-fit: cover;
 	cursor: pointer;
 	filter: saturate(0);
 	transition: all 0.4s ease-in-out;
 }
 #jumbo .store-info img:hover {
-	height: 100%;
-	width: 25%;
-	object-fit: cover;
 	cursor: pointer;
 	filter: saturate(100%);
 }
