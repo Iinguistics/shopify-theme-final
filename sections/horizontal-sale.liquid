@@ -1,0 +1,51 @@
+  {%- assign collection_sale = collections[section.settings.collection_sale] -%}
+
+  <section id="horizontal-sale" style="background: url('{{collection_sale.image | img_url: '1200x'}}'); background-size: cover; height: 700px; width: 100%; background-position: center;">
+    <div class="overlay" style="background:{{ section.settings.collection_bg_color | color_modify: 'alpha', 0.5 }}">
+      <span class="percent-number">
+        {{ section.settings.collection_percent_off }}%
+      </span>
+      <span class="title">
+        OFF SALE
+      </span>
+      <a href="{{ collection_sale.url }}">
+        View
+      </a>
+    </div>
+    
+  </section>
+
+
+
+
+{% schema %}
+{
+  "name": "Horizontal Sale",
+  "settings": [
+    {
+        "type": "collection",
+        "id": "collection_sale",
+        "label": "Collection On Sale",
+        "info": "Choose a collection"
+    },
+    {
+        "type": "color",
+        "id": "collection_bg_color",
+        "label": "BG Color",
+        "default": "#333"
+    },
+    {
+        "type": "text",
+        "id": "collection_percent_off",
+        "label": "Percent Value",
+        "default": "50"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Horizontal Sale",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}
