@@ -365,6 +365,7 @@ header .menu .dropdown .sub-menu a {
 #products-group .product-bg .overlay .product-title {
 	font-weight: 600;
 	font-size: 1.3rem;
+	text-align: center;
 }
 #products-group .product-bg .overlay .product-price {
 	font-weight: 600;
