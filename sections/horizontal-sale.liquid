@@ -1,6 +1,6 @@
   {%- assign collection_sale = collections[section.settings.collection_sale] -%}
 
-  <section id="horizontal-sale" style="background: url('{{collection_sale.image | img_url: '1200x'}}'); background-size: cover; height: 700px; width: 100%; background-position: center;">
+  <section class="horizontal-sale-section" style="background: url('{{collection_sale.image | img_url: '1200x'}}'); background-size: cover; height: 700px; width: 100%; background-position: center;">
     <div class="overlay" style="background:{{ section.settings.collection_bg_color | color_modify: 'alpha', 0.5 }}">
       <span class="percent-number">
         {{ section.settings.collection_percent_off }}%
